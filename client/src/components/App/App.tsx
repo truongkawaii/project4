@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import Login from "../../container/Login";
 import { addTodo } from "../../state/actions";
+import 'antd/dist/antd.css';
 import "./App.css";
 
 function App() {
