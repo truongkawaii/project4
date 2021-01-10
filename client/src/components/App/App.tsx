@@ -1,7 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import Login from "../../container/Login";
 import { addTodo } from "../../state/actions";
+import 'antd/dist/antd.css';
 import "./App.css";
 
 function App() {
@@ -14,6 +17,7 @@ function App() {
 
   return (
     <div className="App">
+        <ToastContainer />
       <input type="text" placeholder="input" />
       <button onClick={handlerAddTodo}>CLICK</button>
       <h2>{todoList}</h2>
