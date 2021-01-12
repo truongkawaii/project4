@@ -1,15 +1,14 @@
 import React from "react";
 import LoadingGif from '../../assets/images/global-loading.gif';
 
-interface Props {
+interface LoadingState {
   isOpenLoading: Boolean;
 }
-const defaultProps: Props = {
-  isOpenLoading: false,
-};
 
-function Loading(props: Props) {
+const Loading : React.FC<LoadingState> = (props) =>{
   const { isOpenLoading } = props;
+  console.log(isOpenLoading,'isOpenLoading');
+  
   return isOpenLoading ? (
     <div className="loading-wrapper">
       <div className="loading-box">
@@ -19,5 +18,9 @@ function Loading(props: Props) {
   ) : null;
 }
 
-Loading.defaultProps = defaultProps;
+Loading.defaultProps={
+  isOpenLoading: false,
+}
+
+
 export default Loading;

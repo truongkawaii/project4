@@ -3,11 +3,11 @@ import { Company } from "../../model/company";
 import _ from "lodash";
 import "./RecruitmentFamous.scss";
 
-interface Props {
+interface User {
   listRecruitmentFamous: Company[];
 }
 
-function RecruitmentFamous(props: Props) {
+const  RecruitmentFamous: React.FC<User> = (props) => {
   const { listRecruitmentFamous } = props;
 
   const listData = _.map(listRecruitmentFamous, (item) => (
