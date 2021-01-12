@@ -1,0 +1,12 @@
+.detail-job{
+    display: flex;
+    flex-wrap: wrap;
+    .detail-job__desc{
+        max-width: 70%;
+        flex-basis: 70%;
+    }
+    .detail-job__relation{
+        max-width: 30%;
+        flex-basis: 30%;
+    }
+}
