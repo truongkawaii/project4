@@ -24,7 +24,6 @@ function App() {
       <button onClick={handlerAddTodo}>CLICK</button>
       <h2>{todoList}</h2>
       <Login/>
-       <DetailsJob/>
     </div>
   );
 }
