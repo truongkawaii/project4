@@ -1,28 +1,34 @@
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
-export const toastSuccess = (message : any, toastSuccessOptions : any) => {
-  toastSuccessOptions = {
-    position: 'top-right',
+export const toastSuccess = (
+  message: string,
+  toastErrorOptions: Object = {
+    position: "top-right",
     hideProgressBar: false,
     autoClose: 2000,
-  };
-  toast.success(message, toastSuccessOptions);
+  }
+) => {
+  toast.success(message, toastErrorOptions);
 };
 
-export const toastError = (message : any, toastErrorOptions : any) => {
-  toastErrorOptions = {
-    position: 'top-center',
+export const toastError = (
+  message: string,
+  toastErrorOptions: Object = {
+    position: "top-center",
     hideProgressBar: false,
     autoClose: 2500,
-  };
+  }
+) => {
   toast.error(message, toastErrorOptions);
 };
 
-export const toastWarning = (message : any, toastWarningOptions : any) => {
-  toastWarningOptions = {
-    position: 'top-center',
+export const toastWarning = (
+  message: string,
+  toastWarningOptions: Object = {
+    position: "top-center",
     hideProgressBar: false,
     autoClose: 2000,
-  };
+  }
+) => {
   toast.warning(message, toastWarningOptions);
 };
