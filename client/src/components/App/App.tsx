@@ -6,8 +6,7 @@ import Login from "../../container/Login";
 import { addTodo } from "../../state/actions";
 import 'antd/dist/antd.css';
 import "./App.css";
-import InfoRecruitment from "../InfoRecruitment";
-import DetailsJob from "../../container/DetailsJob";
+import Loading from "../../common/Loading";
 
 function App() {
   const todoList = useSelector((state: any) => state.todoList.num);
