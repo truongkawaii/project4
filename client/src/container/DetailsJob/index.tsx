@@ -13,7 +13,6 @@ function DetailsJob() {
                 <div className="detail-job__relation">
                 <InfoRecruitment/>
                 </div>
-               
             </div>
         </div>
     )
