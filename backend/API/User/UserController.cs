@@ -95,9 +95,11 @@ namespace Project4.Controlers
             return BadRequest("Mật khẩu không chính xác");
         }
 
-        [HttpPost("avatar/{id}")]
+        [HttpPost("avatar")]
         public async Task<IActionResult> UpdateAvatar(int id, [FromBody] Attachment body)
         {
+            id = CurrentUser.Id;
+            
             var profile = await db.Users.FindAsync(id);
 
             if (profile != null)

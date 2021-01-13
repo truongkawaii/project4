@@ -27,23 +27,26 @@ namespace Project4.Controlers
                                     Title = item.Title,
                                     Description = item.Description,
                                     Author = item.User.FullName,
+                                    PostType = item.PostType,
+                                    User = item.User,
                                     CreatedAt = item.CreatedTime,
                                     UpdatedTime = item.UpdatedTime
 
                                 }).ToListAsync();
-            return View("Views/Admin/Post/Index.cshtml", posts);
+            return Ok(new
+            {
+                posts
+            });
         }
 
-        [HttpPost("create")]
-        public async Task<IActionResult> Create([FromForm] Post model)
+        public async Task<IActionResult> Create([FromBody] Post model)
         {
-
 
             if (ModelState.IsValid)
             {
-
                 model.UserId = CurrentUserId;
                 model.CreatedTime = DateTime.Now;
+                model.UpdatedTime = DateTime.Now;
                 await db.Posts.AddAsync(model);
                 await db.SaveChangesAsync();
 
@@ -53,13 +56,12 @@ namespace Project4.Controlers
                 });
             }
 
-
-            return View("Views/Admin/Post/Create.cshtml");
+            return ModelError();
 
         }
 
-        [HttpPost("{id}")]
-        public async Task<IActionResult> Update([FromForm] Post model, int id)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update([FromBody] Post model, int id)
         {
 
             var post = await db.Posts.FindAsync(id);
@@ -71,8 +73,9 @@ namespace Project4.Controlers
                     post.Description = model.Description;
                     post.Content = model.Content;
                     post.Thumbnail = model.Thumbnail;
+                    post.PostType = model.PostType;
                     post.UserId = CurrentUserId;
-                    post.CreatedTime = DateTime.Now;
+                    post.UpdatedTime = DateTime.Now;
                     await db.SaveChangesAsync();
                 }
 
@@ -86,6 +89,10 @@ namespace Project4.Controlers
             return BadRequest("Post not exist");
         }
 
-
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete([FromBody] Post model, int id)
+        {
+            return Ok();
+        }
     }
 }
