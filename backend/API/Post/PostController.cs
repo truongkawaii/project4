@@ -27,6 +27,8 @@ namespace Project4.Controlers
                                     Title = item.Title,
                                     Description = item.Description,
                                     Author = item.User.FullName,
+                                    PostType = item.PostType,
+                                    User = item.User,
                                     CreatedAt = item.CreatedTime,
                                     UpdatedTime = item.UpdatedTime
 
@@ -38,12 +40,11 @@ namespace Project4.Controlers
         public async Task<IActionResult> Create([FromForm] Post model)
         {
 
-
             if (ModelState.IsValid)
             {
-
                 model.UserId = CurrentUserId;
                 model.CreatedTime = DateTime.Now;
+                model.UpdatedTime = DateTime.Now;
                 await db.Posts.AddAsync(model);
                 await db.SaveChangesAsync();
 
@@ -71,8 +72,9 @@ namespace Project4.Controlers
                     post.Description = model.Description;
                     post.Content = model.Content;
                     post.Thumbnail = model.Thumbnail;
+                    post.PostType = model.PostType;
                     post.UserId = CurrentUserId;
-                    post.CreatedTime = DateTime.Now;
+                    post.UpdatedTime = DateTime.Now;
                     await db.SaveChangesAsync();
                 }
 

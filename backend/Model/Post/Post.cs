@@ -25,9 +25,20 @@ namespace Project4.Models
         public int UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
 
+        public PostType PostType {get;set;}
+
         public DateTime CreatedTime { get; set; }
 
         public DateTime UpdatedTime { get; set; }
 
+    }
+
+    public enum PostType : byte
+    {
+        [Display(Name = "Tuyển dụng")]
+        Recruitment = 1,
+
+        [Display(Name = "Tin tức")]
+        News = 2
     }
 }

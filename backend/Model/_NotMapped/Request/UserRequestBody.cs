@@ -24,8 +24,13 @@ namespace Project4.RequestBody
         public string Password { get; set; }
         public string RePassword { get; set; }
         public IdentityStatus Status { get; set; }
-        public Gender Gender {get;set;}
+        public Gender Gender { get; set; }
         public int[] RoleIds { get; set; }
+
+        public string CompanyName { get; set; }
+        public RecruitmentPosition Position { get; set; }
+        public string WorkAddress { get; set; }
+        public WorkingType[] WorkingTypes { get; set; }
     }
 
     public class RoleBody

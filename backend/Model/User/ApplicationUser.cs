@@ -56,33 +56,11 @@ namespace Project4.Models
 
         public virtual ICollection<IdentityUserLogin<int>> Logins { get; } = new List<IdentityUserLogin<int>>();
 
-        public virtual UserCandidate UserCandidate { get; set; }
+        public virtual Candidate UserCandidate { get; set; }
+        public virtual Recruitment UserRecruitment { get; set; }
 
     }
 
-    public class UserCandidate
-    {
-
-        [Key]
-        public int Id { get; set; }
-
-        [ForeignKey("UserId")]
-        public int UserId { get; set; }
-        public virtual ApplicationUser User { get; set; }
-
-    }
-
-    public class UserRecruiment
-    {
-
-        [Key]
-        public int Id { get; set; }
-
-        [ForeignKey("UserId")]
-        public int UserId { get; set; }
-        public string CompanyName { get; set; }
-        public virtual ApplicationUser User { get; set; }
-    }
 
 
     public class Role : IdentityRole<int>

@@ -179,7 +179,31 @@ namespace Project4.Controlers
             };
 
             var createResult = await userManager.CreateAsync(appUser, user.Password);
-            
+
+            if (roles.Contains("Recruitment"))
+            {
+                var recruiment = new Recruitment
+                {
+                    CompanyName = user.CompanyName,
+                    Position = user.Position,
+                    WorkingTypes = user.WorkingTypes,
+                    WorkAddress = user.WorkAddress,
+                    UserId = appUser.Id
+
+                };
+
+            }
+            else
+            {
+                var candidate = new Candidate
+                {
+                    WorkAddress = user.WorkAddress,
+                    UserId = appUser.Id
+                };
+            }
+
+            await db.SaveChangesAsync();
+
             if (!createResult.Succeeded)
             {
                 return IdentityError(createResult);
