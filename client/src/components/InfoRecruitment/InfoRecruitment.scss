@@ -1,0 +1,45 @@
+ul,
+ol {
+  list-style: none;
+}
+.info-recruitment {
+    border: 1px solid rgba(197, 192, 192, 0.39);
+    border-radius: 5px;
+  .info-top.list-info {
+    background-color: #00b14f;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    margin: 0;
+    span {
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 19px;
+      color: white;
+    //   margin: 0 auto;
+    }
+  }
+  .list-info {
+    padding: 10px 0;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid  rgba(197, 192, 192, 0.39);
+    span {
+      font-size: 14px;
+      font-weight: 700;
+      color: #212f3f;
+      line-height: 20px;
+    }
+    h5 {
+      font-size: 14px;
+      font-weight: 300;
+      color: #333333;
+      margin-bottom: 0;
+      line-height: 20px;
+    }
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+  
+}
