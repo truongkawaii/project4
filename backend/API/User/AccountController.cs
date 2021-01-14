@@ -201,6 +201,7 @@ namespace Project4.Controlers
                 {
                     WorkAddress = user.WorkAddress,
                     UserId = appUser.Id
+           
                 };
 
                 await db.Candidates.AddAsync(candidate);

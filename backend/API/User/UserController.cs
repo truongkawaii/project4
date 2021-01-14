@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,7 @@ namespace Project4.Controlers
     {
 
         [HttpGet("profile")]
+        [Authorize]
         public async Task<IActionResult> GetProfile()
         {
             var securityStamp = User.Claims
@@ -65,7 +67,6 @@ namespace Project4.Controlers
                     user.Gender = body.Gender;
                     user.Birthdate = body.Birthdate;
                     user.PhoneNumber = body.Phone;
-
                     await userManager.UpdateAsync(user);
                     await userManager.UpdateNormalizedEmailAsync(user);
 
@@ -99,7 +100,7 @@ namespace Project4.Controlers
         public async Task<IActionResult> UpdateAvatar(int id, [FromBody] Attachment body)
         {
             id = CurrentUser.Id;
-            
+
             var profile = await db.Users.FindAsync(id);
 
             if (profile != null)
@@ -119,5 +120,22 @@ namespace Project4.Controlers
             return Error("Tài khoản không tồn tại");
         }
 
+
+
+
+        [HttpGet("{userId}/verify")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> VerifyUser(int userId)
+        {
+            var user = await db.Users.FindAsync(userId);
+            if (user != null)
+            {
+                user.UserCandidate.Verify = user.UserCandidate.Verify;
+            }
+            return Ok(new {
+                user,
+                message = "Xác nhận hồ sơ thành công"
+            });
+        }
     }
 }

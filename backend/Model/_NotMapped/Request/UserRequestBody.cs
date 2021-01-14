@@ -31,6 +31,8 @@ namespace Project4.RequestBody
         public RecruitmentPosition Position { get; set; }
         public string WorkAddress { get; set; }
         public WorkingType[] WorkingTypes { get; set; }
+        
+        public string CV {get;set;}
     }
 
     public class RoleBody
@@ -66,7 +68,6 @@ namespace Project4.RequestBody
 
         public Gender Gender { get; set; }
 
-        public JObject Metas { get; set; }
     }
 
     public class ChangePasswordBody

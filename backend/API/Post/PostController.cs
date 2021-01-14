@@ -17,28 +17,79 @@ namespace Project4.Controlers
     [Route("/api/posts")]
     public class PostController : BaseController
     {
-        public async Task<IActionResult> Index()
+        [Route("new")]
+        public async Task<IActionResult> GetNew(int page = 1, int pageSize = 25, string search = null)
         {
-            var posts = await db.Posts.OrderByDescending(item => item.Id)
-                                .Select(item => new
-                                {
-                                    Id = item.Id,
-                                    Thumbnail = item.Thumbnail,
-                                    Title = item.Title,
-                                    Description = item.Description,
-                                    Author = item.User.FullName,
-                                    PostType = item.PostType,
-                                    User = item.User,
-                                    CreatedAt = item.CreatedTime,
-                                    UpdatedTime = item.UpdatedTime
 
-                                }).ToListAsync();
+            var query = db.Posts.Where(item => item.PostType == PostType.News).AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                query = query.Where(item => EF.Functions.ILike(item.Title, search));
+            }
+
+            var posts = await query.Select(item => new
+            {
+                Id = item.Id,
+                Thumbnail = item.Thumbnail,
+                Title = item.Title,
+                Description = item.Description,
+                Author = item.User.FullName,
+                PostType = item.PostType,
+                User = item.User,
+                CreatedAt = item.CreatedTime,
+                UpdatedTime = item.UpdatedTime,
+            })
+
+                           .OrderByDescending(item => item.CreatedAt)
+                           .Skip((page - 1) * pageSize)
+                           .Take(pageSize)
+                           .ToListAsync();
+
             return Ok(new
             {
-                posts
+                posts,
+                total = query.Count()
             });
         }
 
+        [Route("recruitment")]
+        public async Task<IActionResult> GetPostRecruitment(int page = 1, int pageSize = 25, string search = null)
+        {
+            var query = db.Posts.Where(item => item.PostType == PostType.Recruitment).AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                query = query.Where(item => EF.Functions.ILike(item.Title, search));
+            }
+
+            var posts = await query.Select(item => new
+            {
+                Id = item.Id,
+                Thumbnail = item.Thumbnail,
+                Title = item.Title,
+                Description = item.Description,
+                Author = item.User.FullName,
+                PostType = item.PostType,
+                User = item.User,
+                CreatedAt = item.CreatedTime,
+                UpdatedTime = item.UpdatedTime,
+            })
+
+                           .OrderByDescending(item => item.CreatedAt)
+                           .Skip((page - 1) * pageSize)
+                           .Take(pageSize)
+                           .ToListAsync();
+
+            return Ok(new
+            {
+                posts,
+                total = query.Count()
+            });
+        }
+
+
+        [HttpPost]
         public async Task<IActionResult> Create([FromBody] Post model)
         {
 
@@ -67,32 +118,46 @@ namespace Project4.Controlers
             var post = await db.Posts.FindAsync(id);
             if (post != null)
             {
-                if (ModelState.IsValid)
+                if (post.UserId == CurrentUser.Id)
                 {
-                    post.Title = model.Title;
-                    post.Description = model.Description;
-                    post.Content = model.Content;
-                    post.Thumbnail = model.Thumbnail;
-                    post.PostType = model.PostType;
-                    post.UserId = CurrentUserId;
-                    post.UpdatedTime = DateTime.Now;
-                    await db.SaveChangesAsync();
+                    if (ModelState.IsValid)
+                    {
+                        post.Title = model.Title;
+                        post.Description = model.Description;
+                        post.Content = model.Content;
+                        post.Thumbnail = model.Thumbnail;
+                        post.UserId = CurrentUserId;
+                        post.UpdatedTime = DateTime.Now;
+                        await db.SaveChangesAsync();
+                    }
+                    return Ok(new {
+                        message = "Cập nhật bài viết thành công"
+                    });
                 }
 
-                return Ok(new
-                {
-                    item = post
-                });
             }
 
 
-            return BadRequest("Post not exist");
+            return ModelError();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete([FromBody] Post model, int id)
         {
-            return Ok();
+            var post = await db.Posts.FindAsync(id);
+            if (post != null)
+            {
+                if (post.UserId == CurrentUser.Id)
+                {
+                    db.Posts.Remove(post);
+                    await db.SaveChangesAsync();
+                    return Ok(new
+                    {
+                        message = "Xóa bài viết thành công"
+                    });
+                }
+            }
+            return Error("Bạn không thể xóa bài viết này");
         }
     }
 }

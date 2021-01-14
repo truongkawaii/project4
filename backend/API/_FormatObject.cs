@@ -39,6 +39,12 @@ namespace Project4.Api
                 LastName = item.LastName,
                 Gender = item.Gender,
                 Description = item.Description,
+                // CV = item.UserCandidate.CV,
+                // CompanyName = item.UserRecruitment.CompanyName,
+                // Position = item.UserRecruitment.Position,
+                // WorkAddress = item.UserRecruitment.WorkAddress,
+                // WorkingTypes = item.UserRecruitment.WorkingTypes,
+                // RecruitmentType = item.UserRecruitment.RecruitmentType,
                 Roles = item.Roles.Select(r => new
                 {
                     Id = r.RoleId,

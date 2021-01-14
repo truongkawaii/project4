@@ -9,11 +9,8 @@ namespace Project4.Models
         public string CompanyName { get; set; }
         public RecruitmentPosition Position { get; set; }
         public string WorkAddress { get; set; }
-
         public WorkingType[] WorkingTypes { get; set; }
-
         public RecruitmentType RecruitmentType {get;set;}
-
         public int UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
 
@@ -58,7 +55,7 @@ namespace Project4.Models
 
         [Display(Name = "Trả Tiền")]
         Vip = 1,
-        [Display(Name = "Fre")]
+        [Display(Name = "Free")]
         Free = 2
     }
 
