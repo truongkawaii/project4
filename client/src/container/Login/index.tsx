@@ -7,7 +7,6 @@ function Login() {
     return (
      
         <div>
-           <Header/>
             <div className="banner">
   <div className="row">
     <div className="col-lg-5 col-md-12">
@@ -68,7 +67,6 @@ function Login() {
     </div>
   </div>
 </div>
- <Footer/>
         </div>
     )
 }

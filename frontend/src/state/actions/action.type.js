@@ -1,0 +1,8 @@
+const actions = {
+  ADD_TODO: 'ADD_TODO',
+  EDIT_TODO: 'EDIT_TODO',
+  ADD_TODO_SUCCESS:'ADD_TODO_SUCCESS',
+  USER_LOGIN:'USER_LOGIN',
+  USER_LOGIN_SUCCESS:'USER_LOGIN_SUCCESS'
+}
+export default actions;
