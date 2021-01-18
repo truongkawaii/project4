@@ -1,6 +1,6 @@
 import React from 'react';
 import 'react-toastify/dist/ReactToastify.css';
-// import { ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import Login from '../../container/Login';
 import {
   BrowserRouter as Router,
@@ -12,7 +12,7 @@ import 'antd/dist/antd.css';
 import './App.css';
 import Header from '../HeaderLogin';
 import Footer from '../Footer';
-import { PrivateRoute } from '../../hoc/PrivateRoute';
+import  PrivateRoute from '../../hoc/PrivateRoute';
 import Admin from '../../container/Admin';
 import AuthRoute from '../../hoc/AuthRoute/AuthRoute';
 
@@ -20,6 +20,7 @@ function App() {
   const token = localStorage.getItem('token');
   return (
     <React.Fragment>
+    <ToastContainer/>
       <Header />
       <Router>
         <Redirect from="*" to="/login" />

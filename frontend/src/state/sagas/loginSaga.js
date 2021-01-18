@@ -1,4 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
+import { toastSuccess } from '../../Helper/toastHelper';
 import UserService from '../../Services/user.service';
 
 import { Actions, userLoginSuccess } from '../actions';
@@ -9,6 +10,7 @@ function* userLogin(action) {
     const res = yield call(UserService.login, action.payload);
     const token = yield res.access_token;
     yield put(userLoginSuccess(token));
+    yield toastSuccess('Đăng nhập thành công');
   } catch (error) {}
 }
 

@@ -51,7 +51,7 @@ function Login() {
                   onChange={e => setUser({ ...user, userName: e.target.value })}
                 />
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Mật khẩu"
                   onChange={e => setUser({ ...user, password: e.target.value })}
                 />
