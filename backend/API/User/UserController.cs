@@ -130,7 +130,7 @@ namespace Project4.Controlers
             var user = await db.Users.FindAsync(userId);
             if (user != null)
             {
-                user.UserCandidate.Verify = user.UserCandidate.Verify;
+                user.UserCandidate.Verify = !user.UserCandidate.Verify;
             }
             return Ok(new {
                 user,
