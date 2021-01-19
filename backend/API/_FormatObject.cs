@@ -40,6 +40,7 @@ namespace Project4.Api
                 Gender = item.Gender,
                 Description = item.Description,
                 // CV = item.UserCandidate.CV,
+                // Verify = item.UserCandidate.Verify,
                 // CompanyName = item.UserRecruitment.CompanyName,
                 // Position = item.UserRecruitment.Position,
                 // WorkAddress = item.UserRecruitment.WorkAddress,
@@ -73,6 +74,13 @@ namespace Project4.Api
                 LastName = item.LastName,
                 Gender = item.Gender,
                 Description = item.Description,
+                // CV = item.UserCandidate.CV,
+                Verify = item.UserCandidate.Verify,
+                // CompanyName = item.UserRecruitment.CompanyName,
+                // Position = item.UserRecruitment.Position,
+                // WorkAddress = item.UserRecruitment.WorkAddress,
+                // WorkingTypes = item.UserRecruitment.WorkingTypes,
+                // RecruitmentType = item.UserRecruitment.RecruitmentType,
                 Roles = item.Roles
                     .Select(r => new
                     {

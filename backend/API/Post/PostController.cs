@@ -142,7 +142,7 @@ namespace Project4.Controlers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromBody] Post model, int id)
+        public async Task<IActionResult> Delete( int id)
         {
             var post = await db.Posts.FindAsync(id);
             if (post != null)

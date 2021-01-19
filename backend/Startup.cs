@@ -35,7 +35,7 @@ namespace Project4
         {
             services.AddDbContext<ApplicationDbContext>(options =>
               options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddCors();
             //==================== Validate login
 
             IdentityBuilder builder = services.AddIdentityCore<ApplicationUser>(options =>

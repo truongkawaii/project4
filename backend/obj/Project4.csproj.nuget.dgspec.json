@@ -1,28 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "E:\\project\\c#\\project4\\backend\\Project4.csproj": {}
+    "D:\\project4\\backend\\Project4.csproj": {}
   },
   "projects": {
-    "E:\\project\\c#\\project4\\backend\\Project4.csproj": {
+    "D:\\project4\\backend\\Project4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\project\\c#\\project4\\backend\\Project4.csproj",
+        "projectUniqueName": "D:\\project4\\backend\\Project4.csproj",
         "projectName": "Project4",
-        "projectPath": "E:\\project\\c#\\project4\\backend\\Project4.csproj",
-        "packagesPath": "C:\\Users\\HUY4\\.nuget\\packages\\",
-        "outputPath": "E:\\project\\c#\\project4\\backend\\obj\\",
+        "projectPath": "D:\\project4\\backend\\Project4.csproj",
+        "packagesPath": "C:\\Users\\Truong\\.nuget\\packages\\",
+        "outputPath": "D:\\project4\\backend\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\HUY4\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Truong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
