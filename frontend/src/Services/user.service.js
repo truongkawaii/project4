@@ -6,5 +6,13 @@ class UserService {
     const url = `/login`;
     return axiosClient.post(url, { ...obj });
   }
+
+  static getProfile(){
+    const url = `/api/user/profile`;
+    return axiosClient.get(url);
+  }
+
+  
+
 }
 export default UserService;
