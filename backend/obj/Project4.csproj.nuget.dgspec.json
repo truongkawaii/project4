@@ -1,32 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\Project\\project4\\backend\\Project4.csproj": {}
+    "E:\\project\\c#\\project4\\backend\\Project4.csproj": {}
   },
   "projects": {
-    "D:\\C#\\Project\\project4\\backend\\Project4.csproj": {
+    "E:\\project\\c#\\project4\\backend\\Project4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Project\\project4\\backend\\Project4.csproj",
+        "projectUniqueName": "E:\\project\\c#\\project4\\backend\\Project4.csproj",
         "projectName": "Project4",
-        "projectPath": "D:\\C#\\Project\\project4\\backend\\Project4.csproj",
-        "packagesPath": "C:\\Users\\HUY 4\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Project\\project4\\backend\\obj\\",
+        "projectPath": "E:\\project\\c#\\project4\\backend\\Project4.csproj",
+        "packagesPath": "C:\\Users\\HUY4\\.nuget\\packages\\",
+        "outputPath": "E:\\project\\c#\\project4\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\HUY 4\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\HUY4\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -94,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

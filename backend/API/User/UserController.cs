@@ -17,7 +17,6 @@ namespace Project4.Controlers
     {
 
         [HttpGet("profile")]
-        [Authorize]
         public async Task<IActionResult> GetProfile()
         {
             var securityStamp = User.Claims
@@ -27,10 +26,8 @@ namespace Project4.Controlers
             var username = User.Identity.Name;
             var query = db.Users.Where(user =>
                 user.UserName == username &&
-                user.Status == IdentityStatus.Active &&
                 user.SecurityStamp == securityStamp &&
                 user.LockoutEnd == null);
-
             var info = await FormatAccount(query).FirstOrDefaultAsync();
             if (info == null)
             {
