@@ -3,6 +3,7 @@ import {useDispatch , useSelector} from 'react-redux';
 import './Recruitment.scss';
 import { getAllJob } from '../../state/actions';
 import Jobs from '../../components/Jobs';
+import Search from '../../components/Search';
 
 function Recruitment() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function Recruitment() {
   console.log(listJob,'listJob');
   return (
     <div className="bg-rec">
+    <Search/>
       <div className="container">
         <div className="listjob-rec">
           <div className="search__card">

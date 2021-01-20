@@ -35,7 +35,7 @@ namespace Project4
         {
             services.AddDbContext<ApplicationDbContext>(options =>
               options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddCors();
             //==================== Validate login
 
             IdentityBuilder builder = services.AddIdentityCore<ApplicationUser>(options =>
@@ -66,24 +66,24 @@ namespace Project4
                 .AddSignInManager<SignInManager<ApplicationUser>>();
 
             var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Key ma hoa du ki tu ..."));
-
+        
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
+            .AddJwtBearer(options =>
+            {
+                options.SaveToken = true;
+                options.RequireHttpsMetadata = false;
+                options.TokenValidationParameters = new TokenValidationParameters
                 {
-                    options.SaveToken = true;
-                    options.RequireHttpsMetadata = false;
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = signingKey,
-                        ValidateIssuer = true,
-                        ValidIssuer = "HIEN",
-                        ValidateAudience = true,
-                        ValidAudience = "HIEN",
-                        ValidateLifetime = true,
-                        ClockSkew = TimeSpan.Zero
-                    };
-                });
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = signingKey,
+                    ValidateIssuer = true,
+                    ValidIssuer = "HIEN",
+                    ValidateAudience = true,
+                    ValidAudience = "HIEN",
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
 
             services.AddRazorPages();
         }
@@ -103,12 +103,12 @@ namespace Project4
             }
 
 
-            app.UseCors(builder =>
-                             builder.WithOrigins("http://localhost:3000")
-                            .AllowAnyHeader()
-                            .AllowAnyMethod()
-                            .AllowCredentials()
-                    );
+            // app.UseCors(builder =>
+            //                  builder.WithOrigins("http://localhost:3000")
+            //                 .AllowAnyHeader()
+            //                 .AllowAnyMethod()
+            //                 .AllowCredentials()
+            //         );
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

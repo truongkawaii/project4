@@ -1,0 +1,108 @@
+.group{
+    padding: 15px 0 10px 0;
+    background-color: #234;
+    font-family: Arial,helvetica neue,Helvetica,sans-serif;
+}
+.form{
+    padding: 0 5px;
+    position: relative;
+}
+.form .icon{
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    font-size: 18px;
+    color: #555;
+    z-index: 1;
+    font-size: 18px;
+    color: #555;
+}
+.formd{
+    padding: 0 5px;
+    position: relative;
+}
+.formd .icon{
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    font-size: 18px;
+    color: #555;
+    z-index: 1;
+    font-size: 18px;
+    color: #555;
+}
+.formt{
+    padding: 0 5px;
+    position: relative;
+}
+.formt .icon{
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    font-size: 18px;
+    color: #555;
+    z-index: 1;
+    font-size: 18px;
+    color: #555;
+}
+.group input{
+    height: 44px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    width: 100%;
+    padding: 19px 0 19px 35px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background: #fff;
+    line-height: 18px;
+    outline: none;
+    font-family: inherit;
+
+}
+.group select{
+    height: 44px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background: #fff;
+    line-height: 18px;
+    outline: none;
+    font-family: inherit;
+    padding: 0px 0 0 35px;
+}
+.group button{
+    height: 44px;
+    font-size: 14px;
+    line-height: 18px;
+    background-color: #00b14f;
+    color: #fff;
+    border-color: #ddd;
+    padding: 10px 20px;
+    font-weight: 700;
+    border-width: 1px;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    outline: none;
+    width: 100%;
+}
+.group .text__bot h1{
+    margin: 0;
+    font-size: 16px;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .form, .formd, .formt{
+        margin: 10px;
+    }
+}
+
+
+/*# sourceMappingURL=_grid.css.map */

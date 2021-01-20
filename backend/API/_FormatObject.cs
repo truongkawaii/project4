@@ -22,6 +22,71 @@ namespace Project4.Api
     {
         protected IQueryable<object> FormatAccount(IQueryable<ApplicationUser> query)
         {
+            if (query.Any(item => item.UserCandidate != null))
+            {
+                return query.Select(item => new
+                {
+                    Id = item.Id,
+                    UserName = item.UserName,
+                    Email = item.Email,
+                    HasPosConnected = item.PosUserId != null,
+                    item.PosUserId,
+                    JoinDate = item.JoinDate,
+                    Phone = item.PhoneNumber,
+                    Status = item.Status,
+                    FullName = item.FullName,
+                    Avatar = item.Avatar,
+                    Birthdate = item.Birthdate,
+                    FirstName = item.FirstName,
+                    LastName = item.LastName,
+                    Gender = item.Gender,
+                    Description = item.Description,
+                    CV = item.UserCandidate.CV,
+                    Verify = item.UserCandidate.Verify,
+
+                    Roles = item.Roles.Select(r => new
+                    {
+                        Id = r.RoleId,
+                        Name = r.Role.Name,
+                        PositionName = r.Role.PositionName,
+                        Status = r.Role.Status
+                    }).ToList(),
+                });
+            }
+
+            if (query.Any(item => item.UserRecruitment != null)){
+                 return query.Select(item => new
+            {
+                Id = item.Id,
+                HasPosConnected = item.PosUserId != null,
+                item.PosUserId,
+                UserName = item.UserName,
+                Email = item.Email,
+                JoinDate = item.JoinDate,
+                Phone = item.PhoneNumber,
+                Status = item.Status,
+                FullName = item.FullName,
+                Avatar = item.Avatar,
+                Birthdate = item.Birthdate,
+                FirstName = item.FirstName,
+                LastName = item.LastName,
+                Gender = item.Gender,
+                Description = item.Description,
+                CompanyName = item.UserRecruitment.CompanyName,
+                Position = item.UserRecruitment.Position,
+                WorkAddress = item.UserRecruitment.WorkAddress,
+                WorkingTypes = item.UserRecruitment.WorkingTypes,
+                RecruitmentType = item.UserRecruitment.RecruitmentType,
+                Roles = item.Roles
+                    .Select(r => new
+                    {
+                        Id = r.RoleId,
+                        Name = r.Role.Name,
+                        PositionName = r.Role.PositionName,
+                        Status = r.Role.Status
+                    }).ToList()
+            });
+            }
             return query.Select(item => new
             {
                 Id = item.Id,
@@ -39,12 +104,6 @@ namespace Project4.Api
                 LastName = item.LastName,
                 Gender = item.Gender,
                 Description = item.Description,
-                // CV = item.UserCandidate.CV,
-                // CompanyName = item.UserRecruitment.CompanyName,
-                // Position = item.UserRecruitment.Position,
-                // WorkAddress = item.UserRecruitment.WorkAddress,
-                // WorkingTypes = item.UserRecruitment.WorkingTypes,
-                // RecruitmentType = item.UserRecruitment.RecruitmentType,
                 Roles = item.Roles.Select(r => new
                 {
                     Id = r.RoleId,
@@ -73,6 +132,13 @@ namespace Project4.Api
                 LastName = item.LastName,
                 Gender = item.Gender,
                 Description = item.Description,
+                // CV = item.UserCandidate.CV,
+                Verify = item.UserCandidate.Verify,
+                // CompanyName = item.UserRecruitment.CompanyName,
+                // Position = item.UserRecruitment.Position,
+                // WorkAddress = item.UserRecruitment.WorkAddress,
+                // WorkingTypes = item.UserRecruitment.WorkingTypes,
+                // RecruitmentType = item.UserRecruitment.RecruitmentType,
                 Roles = item.Roles
                     .Select(r => new
                     {

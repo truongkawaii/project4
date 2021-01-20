@@ -58,7 +58,7 @@ namespace Project4.Controlers
 
             var query = db.Users
                 .Include(c => c.Roles)
-                .Where(item => item.UserName != "admin")
+                .Where(item => item.UserName != "admin" && item.UserCandidate != null)
                 .AsNoTracking();
 
             if (!string.IsNullOrWhiteSpace(search))

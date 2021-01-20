@@ -1,0 +1,54 @@
+TESTLOG - 16/1/2021
+------------------------------------------------------------------------------
+I. INDEX
+1. Trang chủ
+- chưa làm rate, tag -> hoặc thôi cũng dc :((
+- danh mục, tác giả cột bên trái chưa thu gọn [v]
+	+ nhấp vào nó ko trả về trang gì cả [v]
+- Thằng nào cũng best saller                [best hết :))]
+- search tổng chạy chưa hiệu quả (chỉ tìm dc 1 cuốn) [v]
+2. Tin tức
+- Chưa format lại (lỗi css) [v]
+3. Giới thiệu
+- chưa sửa giao diện (cái này chắc để sau cùng) [v] about/index.cshtml --> cái này thì đệ tự bỏ mặt đệ vào chứ huynh làm gì ok
+4. Đăng ký account
+- chưa thêm trường “phone” khi tạo user (index) [v] --> cái này đăng ký thì k nên thêm nhiều trường , người dùng rất ngại vậy phải làm sao 
+--> lúc xác nhận đơn có thêm đó mà... hm cũng dc NICE
+5. Liên hệ
+OK
+------------------------------------------------------------------------------
+II. Chức năng mượn
+- Text box nhập số lượng ko hoạt động -> vote xóa [v] nice --> ok xóa luôn mỗi thế là nhanh
+- Chưa ràng buộc cho phép mượn <3 cuốn/ lần       
+- chưa làm kho sách -> sách mượn hết rồi vẫn có thể mượn dc
+
+------------------------------------------------------------------------------
+III. Dashboard
+0. Dashboard
+- đệ không thấy nó hoạt động
+1. Sách 
+- chưa ngắt trang [v]
+- nút sửa, xóa chưa hoạt động [xxxxxxxxxxxxx]
+- chưa thêm trường “quantity” khi tạo sách [v]
+2.  Khách hàng
+- chưa tạo được user từ admin [xxxxxxxxxxxx]
+- chức năng trạng thái đệ chưa hiểu [v] hãy hiểu theo cách của đệ
+- chỉnh sửa user đang bị lỗi [xxxxxxxxxxxxx]
+3. Báo cáo
+- đệ chưa hiểu chỗ check quá hạn nên chưa test, còn lại OK  [v] quá hạn thì trạng thái đơn hàng là Overdue
+4. Tin tức 
+OK
+5. Phản hồi
+OK
+------------------------------------------------------------------------------
+IV. Hệ thống chung
+- chưa phân quyền truy cập -> đệ vẫn vào dc bằng account user [v]
+
+V. Khác
+
+Sẽ có thêm 1 quyền nữa đó là administration -> Thằng này cầm trùm hệ thống
+cơ bản là nó có quyền chỉ định role, và riêng nó sẽ có thêm 1 mục nữa đó là quản lý nhân viên
+tương tự tab khách hàng nhưng chỉ hiển thị những đứa có role nhân viên "Librarian"
+
+thêm sửa xóa nhân viên
+
