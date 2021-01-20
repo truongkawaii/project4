@@ -18,6 +18,7 @@ import AuthRoute from '../../hoc/AuthRoute/AuthRoute';
 import Home from '../../container/Home';
 import UpLoadJob from '../../container/UpLoadJob';
 import Recruitment from '../../container/Recruitment';
+ 
 
 function App() {
   const token = localStorage.getItem('token');
@@ -26,6 +27,7 @@ function App() {
     <ToastContainer/>
       <Router>
       <Header />
+     
         <Switch>
           <Route path="/home" exact component={Home}/>
           <AuthRoute type="guest" path="/login" component={Login}/>
