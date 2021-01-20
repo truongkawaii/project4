@@ -129,12 +129,22 @@ namespace Project4.Controlers
             var user = await db.Users.FindAsync(userId);
             if (user != null)
             {
+                await db.Entry(user).Reference(c => c.UserCandidate).LoadAsync();
                 user.UserCandidate.Verify = !user.UserCandidate.Verify;
+                await db.SaveChangesAsync();
+
+                var account = await FormatAccount(db.Users.Where(u => u.Id == user.Id)).FirstOrDefaultAsync();
+                return Ok(new {
+                    account,
+                    message = "Xác nhận hồ sơ thành công"
+                });
+                
             }
-            return Ok(new {
-                user,
-                message = "Xác nhận hồ sơ thành công"
+
+            return BadRequest(new {
+                message = "Tài khoản không tồn tại"
             });
+
         }
     }
 }
