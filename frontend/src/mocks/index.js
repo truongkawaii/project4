@@ -1,4 +1,4 @@
-export const company = [
+export const Company = [
     {
         src : 'https://static.topcv.vn/company_logos/i-can-read-5d1c7587834f5.jpg',
         id:'1'

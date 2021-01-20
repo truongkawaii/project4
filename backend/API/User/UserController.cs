@@ -24,7 +24,9 @@ namespace Project4.Controlers
                 .Select(c => c.Value).FirstOrDefault();
 
             var username = User.Identity.Name;
-            var query = db.Users.Where(user =>
+            var query = db.Users
+                .Include(x => x.Roles)
+                .Where(user =>
                 user.UserName == username &&
                 user.SecurityStamp == securityStamp &&
                 user.LockoutEnd == null);

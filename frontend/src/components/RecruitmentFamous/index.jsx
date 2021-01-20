@@ -1,5 +1,4 @@
 import React from "react";
-import { Company } from "../../model/company";
 import _ from "lodash";
 import "./RecruitmentFamous.scss";
 
@@ -10,7 +9,7 @@ const  RecruitmentFamous = (props) => {
 
   const listData = _.map(listRecruitmentFamous, (item) => (
     <div className="rec__item" key={item.id}>
-      <img src={item.src} alt="" />
+      <img src={item.src} alt="" /> 
     </div>
   ));
 

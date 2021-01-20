@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.scss';
+import { Link } from 'react-router-dom';
 function Header() {
   return (
     <div>
@@ -21,16 +22,19 @@ function Header() {
               <a href="a">Mẫu Cover Letter</a>
             </li>
             <li>
-              <a href="a">Việc làm</a>
+              <Link to="/uploadjob">Tạo Công việc</Link>
             </li>
             <li>
-              <a href="a">Khám phá</a>
+            <Link to="/recruitment">Quản lý Job</Link>
             </li>
             <li>
               <a href="a">Công ty</a>
             </li>
             <li>
               <a href="a">Đăng ký</a>
+            </li>
+            <li>
+              <Link to="/home">Trang chủ</Link>
             </li>
           </ul>
           <div className="employer">

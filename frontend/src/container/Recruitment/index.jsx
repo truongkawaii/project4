@@ -1,12 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import {useDispatch , useSelector} from 'react-redux';
 import './Recruitment.scss';
+import { getAllJob } from '../../state/actions';
+import Jobs from '../../components/Jobs';
 
 function Recruitment() {
-    return (
-        <div>
-            
+  const dispatch = useDispatch();
+  const listJob = useSelector(state=>state.jobs.posts);
+
+  useEffect(() => {
+    dispatch(getAllJob());
+  }, [])
+
+  console.log(listJob,'listJob');
+  return (
+    <div className="bg-rec">
+      <div className="container">
+        <div className="listjob-rec">
+          <div className="search__card">
+            <h2>Chiến dịch tìm kiếm ứng viên</h2>
+          </div>
+          {listJob? <Jobs listJob={listJob}/>:null }
+         
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default Recruitment;
+export default React.memo(Recruitment);
