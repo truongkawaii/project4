@@ -15,21 +15,28 @@ import Footer from '../Footer';
 import PrivateRoute from '../../hoc/PrivateRoute';
 import Admin from '../../container/Admin';
 import AuthRoute from '../../hoc/AuthRoute/AuthRoute';
+import Home from '../../container/Home';
+import UpLoadJob from '../../container/UpLoadJob';
+import Recruitment from '../../container/Recruitment';
 
 function App() {
   const token = localStorage.getItem('token');
   return (
     <React.Fragment>
       <ToastContainer />
-      <Header />
       <Router>
-        <Redirect from="*" to="/login" />
-        <Switch>
+      <Header />
+        <Switch> 
           <AuthRoute type="guest" path="/login" component={Login} exact />
           <PrivateRoute component={Admin} path="/admin" exact />
+          <PrivateRoute component={UpLoadJob} path="/uploadjob" exact />
+          <PrivateRoute component={Recruitment} path="/recruitment" exact/>
+          <Route component={Home} path="/home" exact/>
+          <Redirect from="*" to="/login" /> 
         </Switch>
+        <Footer />
       </Router>
-      <Footer />
+     
     </React.Fragment>
   );
 }
