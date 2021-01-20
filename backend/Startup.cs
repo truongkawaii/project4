@@ -103,12 +103,12 @@ namespace Project4
             }
 
 
-            app.UseCors(builder =>
-                             builder.WithOrigins("http://localhost:3000")
-                            .AllowAnyHeader()
-                            .AllowAnyMethod()
-                            .AllowCredentials()
-                    );
+            // app.UseCors(builder =>
+            //                  builder.WithOrigins("http://localhost:3000")
+            //                 .AllowAnyHeader()
+            //                 .AllowAnyMethod()
+            //                 .AllowCredentials()
+            //         );
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
