@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Project4.Data;
@@ -9,9 +10,10 @@ using Project4.Data;
 namespace Project4.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210307114616_add_table_post_feed_back")]
+    partial class add_table_post_feed_back
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -279,45 +281,6 @@ namespace Project4.Migrations
                     b.ToTable("Posts");
                 });
 
-            modelBuilder.Entity("Project4.Models.PostFeedBack", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .UseIdentityByDefaultColumn();
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreatedTime")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<byte>("PostFeedBackType")
-                        .HasColumnType("smallint");
-
-                    b.Property<int>("PostId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Subject")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("UpdatedTime")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PostId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("postFeedBacks");
-                });
-
             modelBuilder.Entity("Project4.Models.Recruitment", b =>
                 {
                     b.Property<int>("Id")
@@ -466,25 +429,6 @@ namespace Project4.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Project4.Models.PostFeedBack", b =>
-                {
-                    b.HasOne("Project4.Models.Post", "Post")
-                        .WithMany("PostFeedBacks")
-                        .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Project4.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Post");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Project4.Models.Recruitment", b =>
                 {
                     b.HasOne("Project4.Models.ApplicationUser", "User")
@@ -526,11 +470,6 @@ namespace Project4.Migrations
                     b.Navigation("UserCandidate");
 
                     b.Navigation("UserRecruitment");
-                });
-
-            modelBuilder.Entity("Project4.Models.Post", b =>
-                {
-                    b.Navigation("PostFeedBacks");
                 });
 
             modelBuilder.Entity("Project4.Models.Role", b =>

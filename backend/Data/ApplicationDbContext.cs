@@ -74,5 +74,6 @@ namespace Project4.Data
         public DbSet<Candidate> Candidates {get;set;}
         public DbSet<Recruitment> Recruitments {get;set;}
         public DbSet<Post> Posts {get;set;}
+        public DbSet<PostFeedBack> postFeedBacks {get;set;}
     }
 }

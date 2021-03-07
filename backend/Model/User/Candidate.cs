@@ -4,6 +4,7 @@ namespace Project4.Models
 {
     public class Candidate
     {
+        [Key]
         public int Id { get; set; }
         public string WorkAddress { get; set; }
         public string CV { get; set; }
