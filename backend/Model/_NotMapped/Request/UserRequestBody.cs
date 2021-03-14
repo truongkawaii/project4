@@ -31,8 +31,9 @@ namespace Project4.RequestBody
         public RecruitmentPosition Position { get; set; }
         public string WorkAddress { get; set; }
         public WorkingType[] WorkingTypes { get; set; }
-        
-        public string CV {get;set;}
+
+        public string CV { get; set; }
+        public int[] Skills { get; set; }
     }
 
     public class RoleBody
@@ -58,15 +59,21 @@ namespace Project4.RequestBody
 
         [EmailAddress]
         public string Email { get; set; }
-
         public string Phone { get; set; }
 
         [MaxLength(500, ErrorMessage = "Nội dung giới thiệu không được vượt quá 500 ký tự")]
         public string Description { get; set; }
-
         public DateTime? Birthdate { get; set; }
-
         public Gender Gender { get; set; }
+        public string WorkAddress { get; set; }
+        public string CV { get; set; }
+        public int[] Skills { get; set; }
+        public string CompanyName { get; set; }
+        public RecruitmentPosition Position { get; set; }
+        public WorkingType[] WorkingTypes { get; set; }
+        public RecruitmentType RecruitmentType { get; set; }
+
+        public ChangePasswordBody PasswordBody { get; set; }
 
     }
 

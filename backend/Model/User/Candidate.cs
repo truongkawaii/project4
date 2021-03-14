@@ -10,6 +10,7 @@ namespace Project4.Models
         public string CV { get; set; }
         public bool Verify {get;set;}
         public int UserId { get; set; }
+        public int[] Skills {get;set;}
         public virtual ApplicationUser User { get; set; }
     }
 

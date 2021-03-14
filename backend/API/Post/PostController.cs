@@ -75,6 +75,7 @@ namespace Project4.Controlers
                 User = item.User,
                 CreatedAt = item.CreatedTime,
                 UpdatedTime = item.UpdatedTime,
+                Skills = item.Skills,
                 PostFeedBacks = item.PostFeedBacks.Select(item => new PostFeedBack
                 {
                     Subject = item.Subject,

@@ -42,6 +42,7 @@ namespace Project4.Api
                     Gender = item.Gender,
                     Description = item.Description,
                     CV = item.UserCandidate.CV,
+                    Skills = item.UserCandidate.Skills,
                     Verify = item.UserCandidate.Verify,
 
                     Roles = item.Roles.Select(r => new

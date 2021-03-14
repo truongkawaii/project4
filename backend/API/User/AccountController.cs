@@ -78,7 +78,7 @@ namespace Project4.Controlers
             var total = await query.CountAsync();
             query = query.OrderBy(item => item.Status);
             query = query.Skip((page - 1) * pagesize).Take(pagesize);
-            var list = await FormatUser(query).ToListAsync();
+            var list = await FormatAccount(query).ToListAsync();
 
             return Ok(new
             {
