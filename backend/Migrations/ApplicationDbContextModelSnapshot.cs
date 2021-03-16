@@ -220,6 +220,9 @@ namespace Project4.Migrations
                     b.Property<string>("CV")
                         .HasColumnType("text");
 
+                    b.Property<int[]>("Skills")
+                        .HasColumnType("integer[]");
+
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
@@ -257,6 +260,9 @@ namespace Project4.Migrations
 
                     b.Property<byte>("PostType")
                         .HasColumnType("smallint");
+
+                    b.Property<int[]>("Skills")
+                        .HasColumnType("integer[]");
 
                     b.Property<string>("Thumbnail")
                         .IsRequired()

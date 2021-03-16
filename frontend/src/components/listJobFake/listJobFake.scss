@@ -1,0 +1,52 @@
+
+ .card-item{
+    display: flex;
+    flex-wrap: wrap;
+  }
+ .mock-item{ 
+   flex-basis: calc(100%/3);
+   max-width: calc(100%/3);
+   padding: 5px;
+ 
+ }
+ .mock-cpn{
+   border: 1px solid hsla(0,0%,93%,.8);
+   display: flex;
+   align-items: center;
+   height: 80px;
+ } 
+ .mock-cpn:hover{
+   cursor: pointer;
+   background: rgba(197, 188, 188, 0.13);
+ }
+ .mock-cpn img{
+   width: 60px;
+   height: 45px;
+   object-fit: cover;
+   margin: 5px;
+ }
+ .mock-cpn h3{
+   font-size: 14px;
+   font-weight: 700;
+ }
+ .mock-cpn h5{
+   font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #999;
+ }
+ @media (max-width:1023px){
+   .mock-item{ 
+     flex-basis: calc(100%/2);
+     max-width: calc(100%/2);
+     /* padding: 5px; */
+   
+   }
+ }
+ @media (max-width:767px){
+   .mock-item{ 
+     flex-basis: 100%;
+     max-width: 100%;
+   
+   }
+ }

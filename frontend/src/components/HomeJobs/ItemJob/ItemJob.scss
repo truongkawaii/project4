@@ -1,0 +1,14 @@
+.item-job{
+    padding: 10px 15px 10px 5px; 
+    .item__job{
+        border-bottom: 1px solid rgba(168, 162, 162, 0.521);
+        padding-bottom: 5px;
+        display: flex;
+    }
+    img{
+        margin-right: 10px;
+        width: 70px;
+         height: 70px;
+        object-fit: cover;
+    }
+}

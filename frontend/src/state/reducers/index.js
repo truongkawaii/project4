@@ -1,13 +1,15 @@
 import { combineReducers } from 'redux';
-import todo from './todo';
 import loginReducer from './login';
 import JobReducer from './jobs';
+import userReducer from './user';
+import dataUsersReducer from './dataUser';
 // Combine reducer 
 
 const rootReducer = combineReducers({
-  todoList : todo,
   loginUser : loginReducer,
-  jobs : JobReducer
+  jobs : JobReducer,
+  infoUser:userReducer,
+  listUser:dataUsersReducer
 });
  
 export default rootReducer;

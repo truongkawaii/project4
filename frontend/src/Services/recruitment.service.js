@@ -18,5 +18,26 @@ class RecruitmentService {
     return axiosClient.delete(url);
   }
 
+  static editJob(obj){
+    let url =`/api/posts/${obj.id}`;
+    return axiosClient.put(url,{...obj});
+  }
+  static approveJob(data){
+    let url =`/api/recruitment/feedback/${data}?status=3`;
+    return axiosClient.post(url);
+  }
+  static rejectJob(data){
+    let url =`/api/recruitment/feedback/${data}?status=2`;
+    return axiosClient.post(url);
+  }
+  
+  static applieToJob(obj){
+    let url =`/api/candidate/feedback/add/${obj.id}`;
+    return axiosClient.post(url,{...obj.content});
+  }
+
+
+
+
 }
 export default RecruitmentService;

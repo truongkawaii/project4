@@ -15,10 +15,10 @@ const  RecruitmentFamous = (props) => {
 
   return (
     <div className="rec__famous">
-      <div className="container">
+
         <h2 className="recruitment-title">Nhà tuyển dụng nổi bật</h2>
         <div className="rec__famous-list">{listData}</div>
-      </div>
+  
     </div>
   );
 }

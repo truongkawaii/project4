@@ -8,4 +8,25 @@
             border-bottom: 3px solid #d2e6f0;
         }
     }
+    .join-Job{
+        border: 1px dashed rgba(92, 87, 87, 0.342);
+        padding: 10px 12px;
+        h4{
+            font-size: 18px ;
+        }
+    }
+    .option-job{
+        display: flex;
+        align-items: center;
+      
+        p{
+            flex: 1;
+        }
+        button.ant-btn.ant-btn-danger.ant-btn-lg{
+            margin-left: 10px;
+        }
+        h2{
+            font-size: 16px;
+        }
+    }
 }

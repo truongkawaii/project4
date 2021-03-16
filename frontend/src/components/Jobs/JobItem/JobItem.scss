@@ -54,11 +54,25 @@
     font-size: 18px;
     color: rgb(54, 105, 41);
     cursor: pointer;
+    span{
+      margin-right: 6px;
+    }
+    button.ant-btn.ant-btn-primary.ant-btn-lg {
+      display: flex;
+      align-items: center;
+  }
   }
   .jobDelete {
     font-size: 18px;
     cursor: pointer;
     margin-left: 30px;
+    .ant-btn > span {
+      margin-right: 6px;
+  }
+  button.ant-btn.ant-btn-danger.ant-btn-lg {
+    display: flex;
+    align-items: center;
+}
   }
   .optionJob {
     display: flex;

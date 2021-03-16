@@ -12,6 +12,10 @@ class UserService {
     return axiosClient.get(url);
   }
 
+  static getListUser(){
+    const url = `/api/users`;
+    return axiosClient.get(url);
+  }
   
 
 }

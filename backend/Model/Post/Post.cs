@@ -23,6 +23,8 @@ namespace Project4.Models
         [Required(ErrorMessage = "Content is not null")]
         public string Content { get; set; }
 
+        public int[] Skills { get; set; }
+
         [ForeignKey("UserId")]
         public int UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
