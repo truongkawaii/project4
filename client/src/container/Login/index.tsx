@@ -23,7 +23,7 @@ function Login() {
           <p>
             Khi bạn đăng nhập bằng facebook, mặc định bạn đồng ý với
             <span>Điều khoản dịch vụ</span> và
-            <span>Chính sách bảo mật</span> của TopCV
+            <span>Chính sách bảo mật</span> của BotCV
           </p>
           <hr />
         </div>
@@ -48,14 +48,14 @@ function Login() {
     <div className="col-lg-7 col-md-12">
       <div className="tutorial">
         <div className="tutorial_text">
-          <h1>Hướng dẫn sử dụng TopCv</h1>
+          <h1>Hướng dẫn sử dụng BotCV</h1>
           <p>
-            1. Đăng nhập (Đăng ký tài khoản mới nếu bạn chưa từng sử dụng TopCV
+            1. Đăng nhập (Đăng ký tài khoản mới nếu bạn chưa từng sử dụng BotCV
             tại đây)
           </p>
-          <p>2. Viết CV trực tiếp trên TopCV</p>
+          <p>2. Viết CV trực tiếp trên BotCV</p>
           <p>3. Tải CV dạng PDF về máy</p>
-          <p>4. Ứng tuyển các việc làm hot ngay trên TopCV</p>
+          <p>4. Ứng tuyển các việc làm hot ngay trên BotCV</p>
           <iframe
             src="https://www.youtube.com/embed/REMS55jZFoc"
             

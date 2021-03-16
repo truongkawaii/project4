@@ -1,0 +1,68 @@
+
+Chức năng theo API 
+
+* Nhà tuyển dụng 
+  + Nhận yêu cầu ứng tuyển vào Job của ứng viên , nếu approve sẽ add ứng viên vào Job và quản lý ứng viên đó
+nếu ko thì ứng viên sẽ bị từ chối .  
+  + Nhà tuyển dụng có 2 loại trả phí và ko trả phí , Nhà tuyển dụng mua gói trả phí thì sẽ được xem danh sách ứng viên 
+  đã verify ( có thể viết 1 cái api để chuyển vip thành normal )
+example : typeAccRecruiment : 1 ( vip) / 2 ( normal ) 
+
+* Ứng viên 
+ + GỬi yêu cầu ứng tuyển vào JOB của nhà tuyển dụng . 
+
+
+ + Ứng viên cập nhật mục mô tả kinh nghiệm , upload cv , tên , thông tin về bản thân ( chưa có đang thiếu ) .
+
+
+0. feedback 
+gồm các trường
+subject - chủ đề
+content - nội dung
+createtime - ngày tạo
+updatetime - ngày cập nhật
+postFeedbackType - trạng thái feedback --> noprocess (chưa xử lý) = 1 / dispose (hủy bỏ) = 2 / approve = 3
+mặc định lúc tạo feedback trạng thái = chưa xử lý
+
+
+
+1. Feedback bài đăng tuyển dụng
+POST: https://localhost:5001/api/candidate/feedback/add/1 
+{
+    "Subject": "OKE TITLE",
+    "Content": "OKE CONTENT"
+}
+
+2. Lấy danh sách user feedback
+GET: https://localhost:5001/api/posts/recruitment
+thuộc tính: postFeedBacks  
+
+3. Approve / Dispose ứng viên
+
+
+
+POST: https://localhost:5001/api/recruitment/feedback/3?status=2 
+// https://localhost:5001/api/recruitment/feedback/{id_feedback}?status={feedbackType}
+
+noprocess (chưa xử lý) = 1 / dispose (hủy bỏ) = 2 / approve = 3
+postFeedBackType : 1 (chưa xử lý ) , 0 ( approve ) , 2 ( decine)
+
+oke ruif , yeu bac :v oke bac
+
+4. Add coin
+
+E cần 1 trường coins của recruitment
+Recruitment/coins/add/100 
+Recruitment/coins/sub/100
+Để tăng coins giảm coins
+
+POST : https://localhost:5001/api/recruitment/coins/add/100?userId=2 
+nếu truyền userId thì sẽ set coin cho userId nếu k thì set cho curentUserId
+
+POST : https://localhost:5001/api/recruitment/coins/remove/100?userId=2 
+nếu truyền userId thì sẽ set coin cho userId nếu k thì set cho curentUserId
+
+5. Update Profile
+
+--> làm mấy cái trên rồi pm e nói cho , cái này thì kết hợp những cái api như upload --> để 
+upload cv --> get link Cv ...

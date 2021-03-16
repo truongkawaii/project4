@@ -5,7 +5,7 @@ function Header() {
         <div>
             <div className="header">
   <div className="logo">
-    <img src="https://www.topcv.vn/v3/images/topcv-logo-4.png" alt="" />
+    <img src="https://localhost:5001/Resources/users/logo.png" alt="" />
   </div>
   <div className="menu">
     <ul>

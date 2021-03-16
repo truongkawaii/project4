@@ -54,13 +54,13 @@ function Footer() {
       <div className="col-lg-4 col-md-12">
         <div className="top__right">
           <div className="img">
-            <img src="https://www.topcv.vn/v3/images/topcv-logo-4.png" alt="" />
+            <img src="https://localhost:5001/Resources/users/logo.png" alt="" />
             <img
               src="https://www.topcv.vn/images/banner/logo-google-for-startup.png"
               alt=""
             />
           </div>
-          <h5>Ứng dụng TopCV <span>Mới</span></h5>
+          <h5>Ứng dụng BotCV <span>Mới</span></h5>
           <div className="link">
             <a href="a"
               ><img
@@ -95,7 +95,7 @@ function Footer() {
     <hr />
     <div className="bot__bot">
       <div className="license">
-        <p>© 2014 - 2021 Bản quyền thuộc về CTCP TopCV Việt Nam</p>
+        <p>© 2014 - 2021 Bản quyền thuộc về CTCP BotCV Việt Nam</p>
       </div>
       <div className="address">
         <p>

@@ -1,0 +1,43 @@
+BÀI VIẾT TIN TỨC : https://localhost:5001/api/posts/new?page=1&pageSize=25		
+	search	 : https://localhost:5001/api/posts/new?page=1&pageSize=25&search=chan_bon_rau_xanh	
+		  
+BÀI VIẾT TUYỂN DỤNG : https://localhost:5001/api/posts/recruitment?page=1&pageSize=25
+	search        https://localhost:5001/api/posts/recruitment?page=1&pageSize=25&search=nuoi_trong_thuy_san
+
+
+THÊM BÀI VIÊT: 
+
+https://localhost:5001/api/posts
+
+{
+    "title": "chan trong rau xanh",
+    "description": "...", 
+    "thumbnail": "https://url",
+    "content": "content",
+    "posttype": 1  -------> 1 -> Bài viết tuyển dụng
+			   2 -> bài viết tin tức
+}
+
+XÓA BÀI VIẾT : https://localhost:5001/api/posts/4 
+
+CẬP NHẬT BÀI VIẾT : https://localhost:5001/api/posts/4 
+
+PUT
+
+{
+    "title": "chan trong rau xanh 11213",
+    "description": "...", 
+    "thumbnail": "https://url",
+    "content": "content",
+    "posttype": 1
+}
+
+
+
+Verify user --> role = admin
+
+https://localhost:5001/api/user/4/verify -> GET [TRUYỀN LÊN LẪN NỮA THÌ UNVERIFY]
+
+
+
+
