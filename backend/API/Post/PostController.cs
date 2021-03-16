@@ -11,6 +11,7 @@ using Project4.Api;
 using Project4.Data;
 using Project4.Models;
 using Project4.RequestBody;
+using System.Collections.Generic;
 
 namespace Project4.Controlers
 {
@@ -74,6 +75,18 @@ namespace Project4.Controlers
                 User = item.User,
                 CreatedAt = item.CreatedTime,
                 UpdatedTime = item.UpdatedTime,
+                PostFeedBacks = item.PostFeedBacks.Select(item => new PostFeedBack
+                {
+                    Subject = item.Subject,
+                    Content = item.Content,
+                    CreatedTime = item.CreatedTime,
+                    UpdatedTime = item.UpdatedTime,
+                    PostFeedBackType = item.PostFeedBackType,
+                    PostId = item.PostId,
+                    Post = item.Post,
+                    User = item.User,
+                    Id = item.Id
+                }).ToList()
             })
 
                            .OrderByDescending(item => item.CreatedAt)
@@ -130,7 +143,8 @@ namespace Project4.Controlers
                         post.UpdatedTime = DateTime.Now;
                         await db.SaveChangesAsync();
                     }
-                    return Ok(new {
+                    return Ok(new
+                    {
                         message = "Cập nhật bài viết thành công"
                     });
                 }
@@ -142,7 +156,7 @@ namespace Project4.Controlers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete( int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var post = await db.Posts.FindAsync(id);
             if (post != null)

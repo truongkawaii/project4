@@ -38,5 +38,22 @@ namespace Project4.Controlers
             });
         }
 
+        [HttpPost("feedback/add/{postId}")]
+        public async Task<IActionResult> AddFeedback(int postId, [FromBody] PostFeedBack model)
+        {
+            var found = db.Posts.Find(postId);
+            if (found != null)
+            {
+                model.UserId = CurrentUserId;
+                model.PostId = postId;
+                model.CreatedTime = DateTime.Now;
+                model.PostFeedBackType = PostFeedBackType.Noprocess;
+                db.postFeedBacks.Add(model);
+                db.SaveChanges();
+                return Success();
+            }
+            return BadRequest("post not found !");
+        }
+
     }
 }
