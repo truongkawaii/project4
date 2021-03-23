@@ -66,3 +66,4 @@ nếu truyền userId thì sẽ set coin cho userId nếu k thì set cho curentU
 
 --> làm mấy cái trên rồi pm e nói cho , cái này thì kết hợp những cái api như upload --> để 
 upload cv --> get link Cv ...
+ok ạ 

@@ -1,0 +1,43 @@
+
+dotnet ef database update  
+- Chuyển trạng thái recruitment thành vip và ngược lại ( thêm 1 field và 2 api )
+
+  + POST   --> /api/user/{userId}/upgrade/vip
+  + DELETE --> /api/user/{userId}/upgrade/vip
+
+RecruitmentType : 1 VIP  -- 2 NORMAL
+
+
+  - Update Ứng viên , Update recruitment ( đang bị lỗi ko update được )
+  + PUT --> https://localhost:5001/api/user 
+{
+    "firstName": "FirstName",
+    "lastName": "LastName",
+    "fullName": null,
+    "email": null,
+    "phone": null,
+    "description": null,
+    "birthdate": null,
+    "gender": 0,
+    "workAddress": null,
+    "cv": "buon cua toi 2",
+    "skills": [1,2,3,4],
+    "companyName": null,
+    "position": 0,
+    "workingTypes": null,
+    "recruitmentType": 0,
+    "passwordBody": { --> k doi mat khau thi set thang nay = null
+        "password": "123456",
+        "newPassword": "newpass"
+        "rePassword": "newpass"
+    }
+}
+
+
+  - Ứng viên có 1 field là kĩ năng cá nhân vd [ 1 ,2,3,4 ]  (  e sẽ tự định nghĩa ) và 
+bài viết tuyển dụng có yêu cầu kĩ năng vd [ 2,5,7 ] tuỳ vào từng job . ( để e có thể map và tìm kiếm ); 
+
+---> đã thêm --> cột skills --> kiểu dữ liệu  array number 
+
+--> bài tuyển dụng thêm checkbox --> skills  --> skills: [1,2,3,4,5,6] --> 1 , 2 ,3 , 4 , 6 bác tự định nghĩa 
+
