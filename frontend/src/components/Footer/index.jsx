@@ -54,13 +54,13 @@ function Footer() {
       <div className="col-lg-4 col-md-12">
         <div className="top__right">
           <div className="img">
-            <img src="https://localhost:5001/Resources/users/logo.png" alt="" />
+            <img src="https://firebasestorage.googleapis.com/v0/b/burgerbuilder-4fc93.appspot.com/o/FarmTwo%20(1).jpg?alt=media&token=4662aab7-4020-4412-aa1a-e8bb0c230ed0" alt="" />
             <img
               src="https://www.topcv.vn/images/banner/logo-google-for-startup.png"
               alt=""
             />
           </div>
-          <h5>Ứng dụng BotCV <span>Mới</span></h5>
+          <h5>Ứng dụng BotWork <span>Mới</span></h5>
           <div className="link">
             <a href="a"
               ><img
@@ -95,7 +95,7 @@ function Footer() {
     <hr />
     <div className="bot__bot">
       <div className="license">
-        <p>© 2014 - 2021 Bản quyền thuộc về CTCP BotCV Việt Nam</p>
+        <p>© 2014 - 2021 Bản quyền thuộc về CTCP BotWork Việt Nam</p>
       </div>
       <div className="address">
         <p>

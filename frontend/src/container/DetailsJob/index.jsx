@@ -4,7 +4,7 @@ import InfoRecruitment from '../../components/InfoRecruitment';
 import { FaBuffer } from "react-icons/fa";
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import {  useHistory} from 'react-router-dom';
 import { applyToJob, getAllJob, getProfileUser, rejectApplyJob } from '../../state/actions';
 import { Button, Modal } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
@@ -17,6 +17,7 @@ function DetailsJob() {
   const dispatch = useDispatch();
   const listJob = useSelector(state => state.jobs.posts);
   const userInfo = useSelector(state => state.infoUser.user);
+  const history = useHistory();
   const param = useParams();
   const jobItem = listJob?.filter(item => item.id === parseInt(param.id))[0];
   console.log('jobItem', jobItem);
@@ -66,7 +67,9 @@ function DetailsJob() {
               <h3>{item.user.id}</h3>
               <h5>{item.user.userName}</h5>
               <h5>{item.user.email}</h5>
-              <Button type="primary" size={'large'}  >Check thông tin </Button>
+              <Button type="primary" size={'large'} onClick={()=>{
+                history.push(`/detailcv/${item.user.id}`);
+              }} >Check thông tin </Button>
               <Button type="danger" size={'large'} onClick={()=>setIsModalVisible2(true)}  >Xóa ứng viên</Button>
             </>)
           }) : null}

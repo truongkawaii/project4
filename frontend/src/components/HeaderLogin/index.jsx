@@ -11,21 +11,40 @@ function Header() {
     dispatch(userLogoutPage())
     history.push('/login');
   }
+  
   return (
     <div className="headerMenu">
       <div className="header">
         <div className="logo">
-          <img src="https://localhost:5001/Resources/users/logo.png" alt="" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/burgerbuilder-4fc93.appspot.com/o/FarmTwo%20(1).jpg?alt=media&token=4662aab7-4020-4412-aa1a-e8bb0c230ed0" alt="" />
         </div>
         <div className="menu">
           <ul>
             <li>
               <Link to="/home">Trang chủ</Link>
             </li>
+            <li> 
+            {infoUser?.roles[0].id === 2 ? <a href="a">
+                Loại toài khoản {infoUser.recruitmentType===1?<span className="vip">Vip</span> :<span className="normal">Normal</span>}
+              </a> : null}
+            </li>
+            <li> 
+            {infoUser?.roles[0].id === 2 ? <a href="a"> 
+                Coins hiện tại :{infoUser.coins?<span className="coinsRec">{infoUser.coins}</span>:<span className="coinsRec">0</span>}
+              </a> : null}
+            </li>
+            <li> 
+            {infoUser?.roles[0].id === 2 ? <Link to="/priceList"> 
+               Mua coins
+              </Link> : null}
+            </li>
+            <li> 
+            {infoUser?.roles[0].id === 2 ? <Link to={`/upgradeVip`}>
+               {infoUser.recruitmentType===1? null :'Nâng cấp Vip'}
+              </Link> : null}
+            </li>
             <li>
-              <a href="a">
-                Có việc siêu tốc <span>Hot</span> 
-              </a>
+            {infoUser?.roles[0].id === 3 ? <Link to="/addcv">Tìm kiếm công việc</Link> : null}
             </li>
             <li>
             {infoUser?.roles[0].id === 3 ? <Link to="/addcv">Tạo CV</Link> : null}
@@ -34,7 +53,7 @@ function Header() {
             {infoUser?.roles[0].id === 3 ? <Link to="/managercv">Quản lý CV</Link> : null}
             </li>
             <li>
-              <a href="a">Mẫu Cover Letter</a>
+            {infoUser?.roles[0].id === 2 ? <Link to="/searchcandidate">Tìm kiếm ứng viên</Link> : null}
             </li>
             <li>
               {infoUser?.roles[0].id === 2 ? <Link to="/uploadjob">Tạo Công việc</Link> : null}
@@ -46,10 +65,10 @@ function Header() {
               {infoUser?.roles[0].id === 1 ? <Link to="/admin">Quản trị</Link>  : null}
             </li>
             <li>
-              <a href="a">Đăng ký</a>
+            <Link to="/signup">Đăng kí</Link>
             </li>
             <li>
-              <a href="#a" onClick={handlerLogout}>Đăng xuất</a>
+        {infoUser?.roles[0].id?<a href="#a" onClick={handlerLogout}>Đăng xuất</a>:<Link to="/login">Đăng nhập</Link>}     
             </li>
           </ul>
           <div className="employer">

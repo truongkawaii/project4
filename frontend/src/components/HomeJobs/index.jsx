@@ -29,7 +29,7 @@ function HomeJobs() {
      
       </div>
       <div className="banner-job">
-        <img src="https://static.topcv.vn/manual/co-viec-sieu-toc-cung-topcv.png" alt=""/>
+        <img src="https://firebasestorage.googleapis.com/v0/b/burgerbuilder-4fc93.appspot.com/o/co-viec-sieu-toc-cung-topcv%20(1).jpg?alt=media&token=58e676b0-e33f-43c8-98df-d3944a6dd254" alt=""/>
       </div>
     </div>
   )

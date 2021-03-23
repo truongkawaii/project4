@@ -1,0 +1,85 @@
+.item-candidateS{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(110, 108, 108, 0.61);
+
+}
+
+.list-candidateSearch{
+    padding-top: 20px;
+    p{
+        margin-bottom: 0;
+    }
+    .title-table{
+        display: flex;
+        align-items: center;
+    }
+    .idCandidate{
+       flex-basis: 10%;
+       max-width: 10%;
+    }
+    .userNameCandidate{
+        flex-basis: 15%;
+        max-width: 15%;
+    }
+    .fullNameCandidate{
+        flex-basis: 25%;
+        max-width: 25%;
+    }
+    .verify-candidate{
+        flex-basis: 10%;
+        max-width: 10%;
+        span{
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 2px 3px 5px #ccc;
+            font-size: 12px;
+            color: white;
+        }
+        .verifyCV{
+            background: rgb(19, 194, 136);
+        }
+        .notVerifyCV{
+            background: rgb(214, 76, 76);
+        }
+
+    }
+    .phoneCandidate{
+        flex-basis: 10%;
+        max-width: 10%;
+    }
+    .check-cv{
+        flex-basis: 10%;
+        max-width: 10%;
+        button{
+            width: 100%;
+            font-size: 10px;
+            color: rgb(32, 134, 202);
+            &:hover{
+                color: rgb(255, 255, 255);
+                background-color: rgb(32, 134, 202);
+            }
+        }
+    }
+    .item-candidateS{
+        padding: 15px 0;
+        
+    }
+    .skill-candidate{
+        display: flex;
+        flex-basis: 20%;
+        max-width: 20%;
+     .item-skill{
+         font-size: 12px;
+         border: 1px solid rgba(223, 61, 61, 0.651);
+          margin:0 5px;
+          padding: 5px 1px;
+          color: rgba(85, 80, 80, 0.705);
+     }   
+     .item-skill2{
+         font-size: 12px;
+         
+     }   
+    }
+}

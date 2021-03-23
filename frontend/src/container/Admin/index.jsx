@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import {Link} from 'react-router-dom';
 import { FaCubes, FaEyeDropper, FaFileArchive } from "react-icons/fa";
 import './Admin.scss';
 import { getListUser } from '../../state/actions';
-import ItemUser from '../../components/ItemUser';
+ 
 
-function Admin() {
+function Admin(props) {
 
   const dispatch = useDispatch();
   const dataUser = useSelector(state => state.listUser.items);
@@ -14,15 +15,17 @@ function Admin() {
   useEffect(() => {
     dispatch(getListUser());
   }, [dispatch])
+ 
   return (
     <div className="admin-page">
-      <ul className="admin-option">
-        <li>Danh sách chung</li>
-        <li>Danh sách recruitment</li>
-        <li>Danh sách candidate</li>
-        <li>Danh sách các công việc</li>
-        <li>Danh sách admin</li>
+      <ul className="admin-option"> 
+        <li><Link to={'/admin'}>Danh sách chung</Link></li>
+        <li><Link to={'/recruitmentadmin'}>Danh sách recruitment</Link></li>
+        <li><Link to={'/candidateadmin'}>Danh sách candidate</Link></li>
+        <li><Link to={'/jobadmin'}>Danh sách các công việc</Link></li>
+        <li><Link to={'/accountadmin'}>Danh sách admin</Link></li>
       </ul>
+      {/* candidateadmin */}
       <div className="admin-detail">
         <div className="item-list">
           <div className="item-admin__card">
@@ -42,21 +45,17 @@ function Admin() {
           <div className="item-admin__card">
             <span><FaFileArchive /></span>
             <div className="admin-sub">
-              <h2>05</h2>
+              <h2>{total}</h2>
               <h3>TÀI KHOẢN CANDIDATE</h3>
             </div>
           </div>
         </div>
         <div className="list-acc">
-        <div className="card__item">
-            <h4 className="id__item">Mã</h4>
-            <h4 className="user__name">Tên tài khoản</h4>
-            <h4 className="email__item">Email ứng viên</h4>
-           <h4 className="email__item">Checking</h4>
         
-        </div>
-           {dataUser?.map(item => <ItemUser data={item} />)}</div>
-     
+          
+           {props.children}
+           </div>
+       
       </div>
 
     </div>

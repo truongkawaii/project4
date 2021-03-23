@@ -1,0 +1,65 @@
+.recItem{
+    display: flex;
+    align-items: center;
+    h4{
+        font-size: 16px;
+    }
+ 
+}
+.id__recItem{
+    max-width: 5%;
+    flex-basis: 5%;
+}
+.user__recItem{
+    max-width: 12%;
+    flex-basis: 12%;
+}
+.email__recItem{
+    max-width: 23%;
+    flex-basis: 23%;
+}
+.phone__recItem{
+    max-width: 10%;
+    flex-basis: 10%;
+}
+.type_rec{
+    max-width: 10%;
+    flex-basis: 10%;
+}
+.coins__recItem{
+    max-width: 10%;
+    flex-basis: 10%;
+}
+.details__recItem{
+    max-width: 30%;
+    flex-basis: 30%;
+}
+.itemRec{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(133, 125, 125, 0.466);
+    padding: 10px 0;
+}
+.admin-rec{
+    h1{
+        font-size: 30px;
+    }
+    .type_rec {
+        span{
+            color: white;
+            width: max-content;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .normal{
+            background: rgb(19, 206, 128);
+         
+            display: inline-block;
+        
+        }
+        .vip{
+            background: rgb(207, 18, 18);
+           
+        }
+    }
+}

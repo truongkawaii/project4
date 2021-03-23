@@ -55,7 +55,4 @@ export const applyToJobSuccess = (payload) =>({
     payload
 })
 
-// export const deleteJobSuccess = (payload) =>({
-//     type:actions.DELETE_JOB_SUCCESS,
-//     payload 
-// })
+ 

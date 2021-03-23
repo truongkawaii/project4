@@ -23,7 +23,17 @@ import { getProfileUser } from '../../state/actions';
 import DetailsJob from '../../container/DetailsJob';
 import EditJob from '../../container/EditJob';
 import ManagerCV from '../../container/ManagerCV';
-
+import DetailCandidate from '../../container/DetailCandidate';
+import EditCV from '../../container/EditCV';
+import SearchCandidate from '../../container/SearchCandidate';
+import RecruitmentAdmin from '../../container/Admin/Recruitment';
+import AllList from '../../container/Admin/AllList';
+import CandidateAdmin from '../../container/Admin/Candidate';
+import PriceList from '../../container/PriceList';
+import Checkout from '../../container/Checkout';
+import UpgradeVip from '../../container/Upgrade';
+import SignUp from '../../container/SignUp';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 function App() {
   const dispatch = useDispatch();
@@ -40,20 +50,39 @@ function App() {
       <Router>
         <Header />
         <div className="content">
-        <Switch>
-          <Route path="/home" exact component={Home} />
-          <Route path="/editjob/:id" exact component={EditJob} />
-          <Route path="/managercv" exact component={ManagerCV} />
-          <Route path="/detail/:id" exact component={DetailsJob} />
-          <AuthRoute type="guest" path="/login" component={Login} />
-          <PrivateRoute component={Admin} path="/admin" exact />
-          <PrivateRoute component={UpLoadJob} path="/uploadjob" exact />
-          <PrivateRoute component={Recruitment} path="/recruitment" exact />
-          <Route component={Home} path="/home" exact />
-          <Redirect from="*" to="/login" />
-        </Switch>
+          <Switch>
+            <Route path="/home" exact component={Home} />
+            <Route path="/editjob/:id" exact component={EditJob} />
+            <Route path="/managercv" exact component={ManagerCV} />
+            <Route path="/searchcandidate" exact component={SearchCandidate} />
+            <Route path="/detail/:id" exact component={DetailsJob} />
+            <Route path="/priceList" exact component={PriceList} />
+            <Route  path="/checkout/:id" exact component={Checkout} />
+            <Route  path="/upgradeVip" exact component={UpgradeVip} />
+            <Route path="/editcv/:id" exact component={EditCV} />
+            <Route path="/detailcv/:id" exact component={DetailCandidate} />
+            <AuthRoute type="guest" path="/login" component={Login} />
+            <AuthRoute type="guest" path="/signup" component={SignUp} />
+            <PrivateRoute path="/admin" exact>
+              <Admin><AllList/></Admin>
+            </PrivateRoute>
+            <PrivateRoute path="/recruitmentadmin" exact>
+              <Admin><RecruitmentAdmin /></Admin>
+            </PrivateRoute>
+            <PrivateRoute path="/candidateadmin" exact>
+              <Admin><CandidateAdmin /></Admin>
+            </PrivateRoute>
+            <PrivateRoute component={UpLoadJob} path="/uploadjob" exact />
+            <PrivateRoute component={Recruitment} path="/recruitment" exact />
+            <Route component={Home} path="/home" exact />
+            <Redirect from="*" to="/login" />
+          </Switch>
         </div>
-       
+        <MessengerCustomerChat
+    pageId="100946924633446"
+    appId="429027068176067"
+   
+  />
         <Footer />
       </Router>
 

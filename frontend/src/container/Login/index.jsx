@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { userLogin } from '../../state/actions';
 import './Login.scss';
 
@@ -62,7 +62,7 @@ function Login() {
                   <a href="a">Quên mật khẩu?</a>
                 </p>
                 <div className="dk">
-                  <a href="a">Đăng ký tài khoản mới</a>
+                  <Link to="/signup">Đăng ký tài khoản mới</Link>
                   <br />
                   <p>Bạn không đăng nhập được tài khoản?</p>
                   <p>
@@ -76,14 +76,14 @@ function Login() {
           <div className="col-lg-7 col-md-12">
             <div className="tutorial">
               <div className="tutorial_text">
-                <h1>Hướng dẫn sử dụng TopCv</h1>
+                <h1>Hướng dẫn sử dụng BotWork</h1>
                 <p>
                   1. Đăng nhập (Đăng ký tài khoản mới nếu bạn chưa từng sử dụng
-                  TopCV tại đây)
+                    BotWork tại đây)
                 </p>
-                <p>2. Viết CV trực tiếp trên TopCV</p>
+                <p>2. Viết CV trực tiếp trên BotWork</p>
                 <p>3. Tải CV dạng PDF về máy</p>
-                <p>4. Ứng tuyển các việc làm hot ngay trên TopCV</p>
+                <p>4. Ứng tuyển các việc làm hot ngay trên BotWork</p>
                 <iframe
                   src="https://www.youtube.com/embed/REMS55jZFoc"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

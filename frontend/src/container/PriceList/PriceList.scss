@@ -1,0 +1,68 @@
+.price-list{
+    padding: 70px 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://wallpaperaccess.com/full/2076086.jpg');
+    text-align: center;
+     h1{
+        color: white;
+    }
+    .list-price-content{
+        display: flex;
+        justify-content: space-between;
+  
+    }
+    .price-item{
+        background: rgb(255, 255, 255);
+        border: 1px solid rgba(156, 151, 151, 0.507);
+        flex-basis: calc(100%/3 - 15px);
+        h5{
+            margin-bottom: 0;
+            padding: 15px 0;
+            color: white;
+        }
+        h2{
+            font-size: 50px;
+            background: #F2F5FA;
+            padding: 25px 0;
+            margin-bottom: 0;
+        }
+    }
+    .price-start h5{
+       background: #B595E8; 
+    }
+    .price-basic h5{
+        background: #53AEDD;
+    }
+    .price-pro h5{
+        background: #E7AC44; 
+    }
+    li{
+        color: rgb(66, 64, 64);
+        font-size: 18px;
+        padding: 8px 0;
+    }
+     
+    li.title-price{
+        padding: 10px 0;
+        font-size: 25px;
+    }
+    button{
+       margin: 25px 0;
+       &.prSt{
+           background: #B595E8;
+           color: white;
+       }
+       &.prBS{
+           background: #53AEDD;
+           color: white;
+       }
+       &.prPr{
+           background: #E7AC44;
+           color: white;
+       }
+    }
+  
+
+}

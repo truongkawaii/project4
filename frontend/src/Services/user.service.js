@@ -6,6 +6,10 @@ class UserService {
     const url = `/login`;
     return axiosClient.post(url, { ...obj });
   }
+  static signup(obj) {
+    const url = `/api/users/register`;
+    return axiosClient.post(url, { ...obj });
+  }
 
   static getProfile(){
     const url = `/api/user/profile`;
@@ -17,6 +21,15 @@ class UserService {
     return axiosClient.get(url);
   }
   
+  static editUserCV(obj){
+    const url = `/api/user`;
+    return axiosClient.put(url,{...obj});
+  }
+
+  static getListRecruitment(){
+    const url = `/api/recruitment`;
+    return axiosClient.get(url);
+  }
 
 }
 export default UserService;

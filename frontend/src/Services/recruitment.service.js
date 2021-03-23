@@ -35,7 +35,24 @@ class RecruitmentService {
     let url =`/api/candidate/feedback/add/${obj.id}`;
     return axiosClient.post(url,{...obj.content});
   }
+  static getListRecruitment(){
+    let url =`/api/recruitment`;
+    return axiosClient.get(url);
+  }
+// add coins 
+  static addCoins({id,coins}){
+    let url =`/api/recruitment/coins/add/${coins}?userId=${id}`;
+    return axiosClient.post(url);
+  }
 
+  static removeCoins({num,id}){
+    let url =`/api/recruitment/coins/remove/${num}?userId=${id}`;
+    return axiosClient.post(url);
+  }
+  static upgradeVipRec({id}){
+    let url=`/api/user/${id}/upgrade/vip`;
+    return axiosClient.post(url);
+  }
 
 
 

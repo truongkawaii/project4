@@ -120,3 +120,17 @@ export const Company = [
         id:'30'
     },
 ]
+
+export const skills = {
+    0:"C++",
+    1:"HTML",
+    2:"CSS",
+    3:"ReactJs",
+    4:"NodeJs",
+    5:"PHP",
+    6:"Golang",
+    7:"C#",
+    8:"Java",
+    9:"Arhitech",
+    10:"Ruby"
+}
