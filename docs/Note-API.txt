@@ -1,18 +1,11 @@
 
-
-
-1. Init  
-
-I. User - Acount
-
-1. Init
-
+ 
 URL: --> https://localhost:5001/admin/init	
 
 2. LOGIN
 
 
-3 tài khoản đó thầy
+3 tài khoản 
 ->
 
 URL:    https://localhost:5001/login
@@ -74,116 +67,7 @@ PATH = [Recruiment || Candidate || Images || User]
 
 --> upload vào thư mục --> Backend/Resources/{PATH}
 
-
-
-em còn chưa test api 
-
--> init 
-
-khá đầy đủ r thầy
-phân quyền ...
-
-
-
--- 
-
-thầy bỏ cái upload 
-
-vô đi
-
-nó dùng cho
-
-update avatar
-
-thêm thumbnail  bài viết ..
-
-dùng 1 cái api 
-upload thôi
-
-luu lai thay
-
-
-form data chứ thầy, queen :)) 
-
-api này thầy dùng
-
-trong việc
-
-thêm avatar user
-
-thêm thumbnail cho post
-
-...
-
-up lên thầy lấy url
-
-này về
-
-r gửi lên em thêm vô db thôi
-e hieeur r 
-ok thầy
-
-
-
-register
-
-
-thì em tính admin có thể create dc account
-
-401 --> nếu tạo tài khoản bằng api này thầy phải bỏ token 
-
-là admin vô 
-
-oek ehieu r 
-
-thay luu api create lai
-
-- register
-
-
-thi thay thich luc dang ky call api 
-
-nay get role
-
-k thì truyền lên cũng dc
-
-
-3 là candidate chẳng hạn
-ok 
-cai register cua acc bthg thi truyen ntn vay bac
-
-
-
-co 2 loai
-
-1 la nha tuyen dung
-
-2 la candidate
-
-đó bác
-
-alo hiểu chứ
-
-alo thầy alo e day , 
-e dang xem
-
-thì đó là thêm tài khoản thằng muốn tuyển dụng
-
-, đây là nhà tuyển dụng
-
-roleId nó là 2
-
-
-
-ở đây thầy cho cái select option 
-
-1 
-2
-
-3
-4
-tương ứng
-
+      
    [Display(Name = "Giám đốc")]
         Manager = 1,
         Hr = 2,
@@ -191,10 +75,6 @@ tương ứng
         Deputy = 3,
         [Display(Name = "Nhân viên")]
         Staff = 4
-
-
-oke oke
-
 [Display(Name = "Kinh doanh / Bán hàng")]
         Business = 1,
         [Display(Name = "Biên / Phiên dịch")]
@@ -208,88 +88,10 @@ oke oke
 
         [Display(Name = "Công nghệ phần cứng")]
         HardWareTechonlogy = 5
-
-loại hinh cũng thế
-
-mấy cái này thì nên fix cứng 
-
-để hằng số chứ k cần thêm bảng làm gì
-
-vì nó cố định mà
-
- ok e 
-h
-ieu
-
-vì chọn dc nhiều
-
-nên là array
-
-bỏ qua skype đi k phổ biến
-
-làm pho cần gì skype thầy nhỉ:)) 
-
-cái địa chỉ thầy kiếm đại api get quận huyện
-
-thành phố 
-
-tddiaj chir auto string cho e :)) 
-
-thầy + chuỗi lại gửi lên
-
-
-nếu chơi kiểu select 2 cái thế kia
-
-
-thầy search là có
-
-e tuwnfg dung r  ,nhưng địa chỉ thì làm string cho lẹ , chọn quần què gì mệt :> 
-ok thầy
-
-som mai em go them cai validate 
-
-duplicate username password 
-ĐỢI E MỞ LAP CÀI ide RỒI CHẠY LUN  :> 
-
-alo thầy. nghe k thầy
-
-
-alo e day 
-
-mai e fix
-
-cais loai cong viec
-
-để kiểu danh sách hằng số chưa đúng 
-
-nhưng thầy cứ làm thế
-
-truyền array lên
-
-- ngoài ra user còn phần 
-
-profile
-
-lúc gửi token lên
-
 /api/user/profile --> lay dc profile của nó
 /api/user/update 
 /api/user/password --> change password
 /api/user/avatar --> upla
-
-sao thay
-Bác viết xog ý xong push code backend hoàn chỉnh lên để e dùng laptop clone về 
-rồi bác chạy giúp e trên laptop nhá , 
-postman thì nó tự lưu r . :> 
-ok thay
-
-- bài viết có 2 loại
-
-1 là bài tuyển dụng / tin tức
-
-
-bài viết
-
 
 api/posts
 
@@ -308,94 +110,3 @@ public int Id { get; set; }
         public string Content { get; set; }
 
         TypePost
-
-
-TITLE
-
-phần description 
-
-và content thầy dùng editor nào đó thì viết sẽ ra cấu trúc ntn thôi
-e hiểu :D
-
-vậy là xong phan bai viet
-
-sớm mai chắc thầy xử xong dc user thôi
-chiều mai bai viet la ok
-
-chuc nang ung tuyen ngay 
-
-ok easy 
-
-chieu mai may h thi em utral giao not api khúc sau này cho thầy
-bây giờ đang có những chức năng nào bác cứ up code lên rồi viết collection postman sau e mò thêm , 
-sau chạy đc trên laptop là oke . 
-vì e phải ghép giao diện ms demo dc
-h còn phần bài viết nộp 
-ko cần viết chức năng ứng tuyển ngay vội 
-mục đích chức năng e cần demo là cv của ứng viên có trạng thái isverify 
-và nó phải do admin lọc 
-những recruitment có 2 loại trả tiền và ko trả tiền , nếu ko trả tiền sẽ chỉ xem đc 
-những cv cùi bắp chưa đc verify ý . 
-ông thầy bắt như vayajk 
-
-nice thầy 
-
-em quên mất
-
-ngủ thôi tầm 9 10 h em giao cho
-
-oke , sau bác push code lên nha , trưa có gì vào chạy cho e trên laptop là oke :> 
-
-bác nhớ cho e cái chức năng verify là qtrong nhất nha :> 
-
-
-ý tưởng :
-
-sẽ tạo 
-
---> nộp tiền thi là vip
-
---> 
-
-
-còn cái verify đơn giản là
-
-làm check box check hay sao bác
-
-
-verify bác để những thằng register candidate khi tạo account và khi up cv lên là false hết 
-sau đó admin sẽ check từng thằng từ false thành true 
-và thằng rec trả tiền se
-x
-ok hiểu
-
-yes :> up code nha 
-
-up cv 
-
-thang dang login chon up cv
-
-thế chắc e tạo thêm 1 bảng cv
-
-Đối với thằng là 1 account bác nên tạo thêm 1 bảng cv để nó liên kết tới bảng acc của candidate ý 
-và thằng rec cux có 1 bảng Jobs , 1 rec nó tạo đc nhiều Jobs 
-
-bảng post r thầy
-
-post là bài tuyển dụng or tin tức
-
-vậy thôi( e hieeurr ) 
-cái verify giúp e nhé , giờ up code lên đi bác
-
-hiện tại cứ chó up 1 cv thôi
-
-thế
-
-thằng candidate up 1 cv thui 
-
-vậy là xong r đó thầy
-
-add 1 fileds cho khỏe chứ bảng làm gì
-
-bắn cái link lên thôi
-
