@@ -5,12 +5,4 @@ Cài đầy đủ môi trường
 
 --> run: dotnet ef database update
 
-là dc bác
-Có cách nào đem dữ liệu e đã nhập trong db sang máy kia ko ? 
-
-có bác
-
-bác cứ làm đi làm xong pm e đưa qua cho
-ok , à còn cái addcoin cux ko cần role admin nữa bác
-
-api la j bac /coins
+ 
