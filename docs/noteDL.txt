@@ -46,12 +46,10 @@ POST: https://localhost:5001/api/recruitment/feedback/3?status=2
 
 noprocess (chưa xử lý) = 1 / dispose (hủy bỏ) = 2 / approve = 3
 postFeedBackType : 1 (chưa xử lý ) , 0 ( approve ) , 2 ( decine)
-
-oke ruif , yeu bac :v oke bac
-
+ 
 4. Add coin
 
-E cần 1 trường coins của recruitment
+ 
 Recruitment/coins/add/100 
 Recruitment/coins/sub/100
 Để tăng coins giảm coins
@@ -64,6 +62,4 @@ nếu truyền userId thì sẽ set coin cho userId nếu k thì set cho curentU
 
 5. Update Profile
 
---> làm mấy cái trên rồi pm e nói cho , cái này thì kết hợp những cái api như upload --> để 
-upload cv --> get link Cv ...
-ok ạ 
+ 
